@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.6.5-MariaDB-1:10.6.5+maria~focal)
 # Database: marcus-collection
-# Generation Time: 2022-02-07 11:50:41 +0000
+# Generation Time: 2022-02-07 14:19:07 +0000
 # ************************************************************
 
 
@@ -29,12 +29,25 @@ CREATE TABLE `albums` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `cover` varchar(255) NOT NULL DEFAULT '',
   `name` varchar(255) NOT NULL DEFAULT '',
-  `artist` varchar(255) NOT NULL DEFAULT '',
+  `band` varchar(255) NOT NULL DEFAULT '',
   `release` date NOT NULL,
   `numSongs` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+LOCK TABLES `albums` WRITE;
+/*!40000 ALTER TABLE `albums` DISABLE KEYS */;
+
+INSERT INTO `albums` (`id`, `cover`, `name`, `band`, `release`, `numSongs`)
+VALUES
+	(1,'zsatsfm.jpg','The Rise and Fall of Ziggy Stardust and the Spiders from Mars','David Bowie','1972-07-09',11),
+	(2,'as.jpg','Aladdin Sane','David Bowie','1973-04-13',10),
+	(3,'theClash.jpg','The Clash','The Clash','1977-04-08',14),
+	(4,'aKissInTheDreamhouse.jpg','A Kiss In The Dreamhouse','Siouxsie and the Banshees','1982-11-05',9),
+	(5,'areYouExperienced.jpeg','Are You Experienced','The Jimi Hendrix Experience','1967-05-12',11);
+
+/*!40000 ALTER TABLE `albums` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
