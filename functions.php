@@ -6,8 +6,6 @@ function database()
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $query = $db->prepare("SELECT `cover`, `name`, `band`, `release`, `numSongs` FROM `albums`;");
     $query->execute();
-    $result = $query->fetchAll();
-    echo '<pre>';
-    var_dump($result);
-    echo '</pre>';
+
+    return $query->fetchAll();
 }
