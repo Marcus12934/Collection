@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Gets an array from a database
+ *
+ * @return array|false
+ */
 function getRecordsFromDB()
 {
     $db = new PDO('mysql:host=db; dbname=marcus-collection', 'root', 'password');
@@ -10,6 +15,12 @@ function getRecordsFromDB()
     return $query->fetchAll();
 }
 
+/**
+ * Takes a YYYY-MM-DD date and returns a DD/MM/YYYY date
+ *
+ * @param string $date
+ * @return string
+ */
 function formatDate(string $date): string
 {
     if (strtotime($date) === false)
@@ -18,6 +29,12 @@ function formatDate(string $date): string
     return date_format($formattedDate,"j/F/Y");
 }
 
+/**
+ * Takes in an array of information and returns it in a readable string with an image
+ *
+ * @param array $records
+ * @return string
+ */
 function displayRecords(array $records): string
 {
     if ($records === []) {

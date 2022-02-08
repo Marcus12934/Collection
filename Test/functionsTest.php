@@ -6,6 +6,11 @@ require '../functions.php';
 
 class functionsTest extends TestCase
 {
+    /**
+     * Tests the successful use of the formatDate function
+     *
+     * @return void
+     */
     public function testSuccessFormatDate(): void
     {
         $input = '1972-07-09';
@@ -14,6 +19,11 @@ class functionsTest extends TestCase
         $this->assertEquals($case, $expected);
     }
 
+    /**
+     * Tests the failed use of the formatDate function
+     *
+     * @return void
+     */
     public function testFailureFormatDate(): void
     {
         $input = '1972-33-09';
@@ -22,6 +32,11 @@ class functionsTest extends TestCase
         $this->assertEquals($case, $expected);
     }
 
+    /**
+     * Tests the use of the formatDate function with an incorrect data type
+     *
+     * @return void
+     */
     public function testMalformedFormatDate(): void
     {
         $input = [1];
@@ -29,6 +44,11 @@ class functionsTest extends TestCase
         formatDate($input);
     }
 
+    /**
+     * Tests the successful use of the displayRecords function
+     *
+     * @return void
+     */
     public function testSuccessDisplayRecords(): void
     {
         $input = [
@@ -45,6 +65,11 @@ class functionsTest extends TestCase
         $this->assertEquals($case, $expected);
     }
 
+    /**
+     * Tests the failed use of the displayRecords function
+     *
+     * @return void
+     */
     public function testFailureDisplayRecords(): void
     {
         $input = [];
@@ -53,6 +78,11 @@ class functionsTest extends TestCase
         $this->assertEquals($case, $expected);
     }
 
+    /**
+     * Tests the use of the displayRecords function with an incorrect data type
+     *
+     * @return void
+     */
     public function testMalformedDisplayRecords(): void
     {
         $input = false;
