@@ -9,3 +9,9 @@ function database()
 
     return $query->fetchAll();
 }
+
+function formatDate(string $date): string
+{
+    $formatedDate = date_create($date);
+    return date_format($formatedDate,"j/F/Y");
+}
