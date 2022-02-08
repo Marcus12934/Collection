@@ -1,6 +1,6 @@
 <?php
 
-function database()
+function getRecordsFromDB()
 {
     $db = new PDO('mysql:host=db; dbname=marcus-collection', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -10,23 +10,24 @@ function database()
     return $query->fetchAll();
 }
 
-$db = database();
-
 function formatDate(string $date): string
 {
+    if (strtotime($date) === false)
+        return 'Invalid Date';
     $formattedDate = date_create($date);
     return date_format($formattedDate,"j/F/Y");
 }
 
-$i = 0;
-$arrayLength = count($db);
-
-function records($db): string
+function displayRecords(array $records): string
 {
-    $i = 0;
-    $arrayLength = count($db);
-    while ($i < $arrayLength)
-        foreach ($db as $data) {
-            return '<div class="textbox">' . '<img src="' . $data['cover'] . '"alt="Album cover">' . $data['name'] . ' was an album by ' . $data['band'] . '. The album was released on ' . formatDate($data['release']) . ' and has '. $data['numSongs'] . ' songs.' . '</div>';
-        }
+    if ($records === []) {
+        return 'Missing info';
+    }
+
+    $result = '';
+
+    foreach ($records as $record) {
+        $result .= '<div class="textbox">' . '<img src="' . $record['cover'] . '" alt="Album cover">' . $record['name'] . ' was an album by ' . $record['band'] . '. The album was released on ' . formatDate($record['release']) . ' and has ' . $record['numSongs'] . ' songs.' . '</div>';
+    }
+    return $result;
 }
