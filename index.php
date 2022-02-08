@@ -1,9 +1,10 @@
+<h1>Welcome to my collection of records</h1>
+
 <?php
 
 require 'functions.php';
 
-$db = database();
+$records = getRecordsFromDB();
+echo displayRecords($records);
 
-echo '<pre>';
-var_dump($db);
-echo '<pre>';
+?>
