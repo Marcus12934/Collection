@@ -60,7 +60,7 @@ class functionsTest extends TestCase
             'numSongs' => '11'
             ]
         ];
-        $expected = '<div class="textbox"><img src="test.jpg" alt="Album cover">The Rise and Fall of Ziggy Stardust and the Spiders from Mars was an album by David Bowie. The album was released on 9/July/1972 and has 11 songs.</div>';
+        $expected = '<div class="textbox"><img src="test.jpg" alt="Album cover"><p>The Rise and Fall of Ziggy Stardust and the Spiders from Mars is an album by David Bowie. The album was released on 9/July/1972 and has 11 songs.</p></div>';
         $case = displayRecords($input);
         $this->assertEquals($case, $expected);
     }
