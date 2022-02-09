@@ -14,7 +14,7 @@ class functionsTest extends TestCase
     public function testSuccessFormatDate(): void
     {
         $input = '1972-07-09';
-        $expected = '9/July/1972';
+        $expected = '9th July 1972';
         $case = formatDate($input);
         $this->assertEquals($case, $expected);
     }
@@ -60,7 +60,7 @@ class functionsTest extends TestCase
             'numSongs' => '11'
             ]
         ];
-        $expected = '<div class="textbox"><img src="test.jpg" alt="Album cover"><p>The Rise and Fall of Ziggy Stardust and the Spiders from Mars is an album by David Bowie. The album was released on 9/July/1972 and has 11 songs.</p></div>';
+        $expected = '<div class="textbox"><img src="test.jpg" alt="Album cover"><p>The Rise and Fall of Ziggy Stardust and the Spiders from Mars is an album by David Bowie. The album was released on 9th July 1972 and has 11 songs.</p></div>';
         $case = displayRecords($input);
         $this->assertEquals($case, $expected);
     }
@@ -73,7 +73,7 @@ class functionsTest extends TestCase
     public function testFailureDisplayRecords(): void
     {
         $input = [];
-        $expected = 'Missing info';
+        $expected = 'Sorry, missing records';
         $case = displayRecords($input);
         $this->assertEquals($case, $expected);
     }

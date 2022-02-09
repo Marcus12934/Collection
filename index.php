@@ -1,11 +1,14 @@
 <?php
 require 'functions.php';
 
-$records = getRecordsFromDB();
+$db = getDb();
+
+$records = getRecordsFromDB($db);
 
 ?>
 
 <head>
+    <title>Marcus Collection</title>
     <meta name="viewport" content="width=device-width">
     <link href="normalizeCollection.css" rel="stylesheet" type="text/css">
     <link href="styleCollection.css" rel="stylesheet" type="text/css">
