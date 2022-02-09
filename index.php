@@ -1,3 +1,10 @@
+<?php
+require 'functions.php';
+
+$records = getRecordsFromDB();
+
+?>
+
 <head>
     <meta name="viewport" content="width=device-width">
     <link href="normalizeCollection.css" rel="stylesheet" type="text/css">
@@ -9,14 +16,7 @@
     <h1>Welcome to my collection of records</h1>
 </header>
 <div class="albums">
-    <?php
-
-    require 'functions.php';
-
-    $records = getRecordsFromDB();
-    echo displayRecords($records);
-
-    ?>
+    <?php echo displayRecords($records); ?>
 </div>
 
 </body>
