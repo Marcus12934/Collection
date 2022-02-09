@@ -5,6 +5,7 @@ $db = getDb();
 
 $records = getRecordsFromDB($db);
 
+$result = displayRecords($records);
 ?>
 
 <head>
@@ -18,8 +19,6 @@ $records = getRecordsFromDB($db);
 <header>
     <h1>Welcome to my collection of records</h1>
 </header>
-<div class="albums">
-    <?php echo displayRecords($records); ?>
-</div>
+<div class="albums"><?php echo $result;?></div>
 
 </body>
