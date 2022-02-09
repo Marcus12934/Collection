@@ -44,7 +44,7 @@ function displayRecords(array $records): string
     $result = '';
 
     foreach ($records as $record) {
-        $result .= '<div class="textbox">' . '<img src="' . $record['cover'] . '" alt="Album cover">' . $record['name'] . ' is an album by ' . $record['band'] . '. The album was released on ' . formatDate($record['release']) . ' and has ' . $record['numSongs'] . ' songs.' . '</div>';
+        $result .= '<div class="textbox">' . '<img src="' . $record['cover'] . '" alt="Album cover">' . '<p>' . $record['name'] . ' is an album by ' . $record['band'] . '. The album was released on ' . formatDate($record['release']) . ' and has ' . $record['numSongs'] . ' songs.' . '</p>' . '</div>';
     }
     return $result;
 }

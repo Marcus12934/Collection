@@ -5,15 +5,18 @@
 </head>
 
 <body>
-<h1>Welcome to my collection of records</h1>
+<header>
+    <h1>Welcome to my collection of records</h1>
+</header>
+<div class="albums">
+    <?php
 
-<?php
+    require 'functions.php';
 
-require 'functions.php';
+    $records = getRecordsFromDB();
+    echo displayRecords($records);
 
-$records = getRecordsFromDB();
-echo displayRecords($records);
-
-?>
+    ?>
+</div>
 
 </body>
