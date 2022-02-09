@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.6.5-MariaDB-1:10.6.5+maria~focal)
 # Database: marcus-collection
-# Generation Time: 2022-02-07 14:19:07 +0000
+# Generation Time: 2022-02-09 14:49:35 +0000
 # ************************************************************
 
 
@@ -42,9 +42,9 @@ INSERT INTO `albums` (`id`, `cover`, `name`, `band`, `release`, `numSongs`)
 VALUES
 	(1,'zsatsfm.jpg','The Rise and Fall of Ziggy Stardust and the Spiders from Mars','David Bowie','1972-07-09',11),
 	(2,'as.jpg','Aladdin Sane','David Bowie','1973-04-13',10),
-	(3,'theClash.jpg','The Clash','The Clash','1977-04-08',14),
+	(3,'londonCalling.jpeg','London Calling','The Clash','1979-12-14',19),
 	(4,'aKissInTheDreamhouse.jpg','A Kiss In The Dreamhouse','Siouxsie and the Banshees','1982-11-05',9),
-	(5,'areYouExperienced.jpeg','Are You Experienced','The Jimi Hendrix Experience','1967-05-12',11);
+	(5,'Areyouexp.jpg','Are You Experienced','The Jimi Hendrix Experience','1967-05-12',11);
 
 /*!40000 ALTER TABLE `albums` ENABLE KEYS */;
 UNLOCK TABLES;
