@@ -10,6 +10,7 @@ $result = displayRecords($records);
 
 <head>
     <title>Marcus Collection</title>
+    <link rel="icon" href="record.jpg">
     <meta name="viewport" content="width=device-width">
     <link href="normalizeCollection.css" rel="stylesheet" type="text/css">
     <link href="styleCollection.css" rel="stylesheet" type="text/css">
