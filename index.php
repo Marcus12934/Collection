@@ -6,9 +6,6 @@ $db = getDb();
 $records = getRecordsFromDB($db);
 
 $result = displayRecords($records);
-
-$date = date('Y-m-d');
-echo $date;
 ?>
 
 <head>
